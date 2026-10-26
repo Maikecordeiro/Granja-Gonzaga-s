@@ -1,0 +1,45 @@
+GRANJA GONZAGA'S — SUÍNOS (compra e engorda)
+Versão inicial do aplicativo web instalável (PWA), com suporte offline.
+
+RECURSOS
+- Cadastro de suínos, lote, data de entrada, peso e custo de compra.
+- Histórico de pesagens e GMD automático pelas duas últimas pesagens com datas diferentes.
+- Cadastro de insumos com preço do saco, peso do saco e cálculo do preço por kg.
+- Preparação de traços de ração com até cinco ingredientes; soma precisa bater com o peso do traço.
+- Estoque de insumos e ração pronta; entradas, saídas, ajustes e consumo de ração por lote.
+- Despesas, vendas, resultados estimados por lote e por animal.
+- Backup JSON completo e exportação CSV dos animais.
+
+IMPORTANTE SOBRE OFFLINE E DADOS
+- O app é separado do “Meu Confinamento”: publique em um repositório/endereço próprio.
+- Dados salvos no localStorage deste navegador e endereço; não há sincronização automática entre iPhone e computador.
+- Faça backups JSON regularmente. Não limpe os dados do navegador.
+- Para o uso offline, publique em HTTPS e abra o site com internet uma vez para carregar os arquivos e registrar o service worker.
+- No iPhone, abra o site no Safari > Compartilhar > Adicionar à Tela de Início.
+- No computador, use o menu de instalação do navegador compatível (por exemplo, Chrome/Edge).
+- Offline não significa sincronização: cada dispositivo tem sua própria cópia dos dados.
+
+PUBLICAÇÃO SIMPLES COM GITHUB PAGES
+1. Entre em github.com e crie um repositório novo, por exemplo: granja-gonzagas-suinos. Não use o repositório do aplicativo de gado.
+2. Extraia o ZIP no computador.
+3. Envie para a raiz do repositório todos os arquivos que estão dentro da pasta “granja_gonzagas_suinos” (index.html, styles.css, app.js, manifest.json, sw.js, icon.svg e este arquivo).
+4. No repositório, abra Settings > Pages.
+5. Em “Build and deployment”, escolha “Deploy from a branch”; selecione a branch main e a pasta /(root), depois Save.
+6. Aguarde a publicação e abra o endereço HTTPS mostrado pelo GitHub Pages.
+7. Abra uma vez com internet. No iPhone, Safari > Compartilhar > Adicionar à Tela de Início. No computador, use a opção de instalar do navegador, se disponível.
+8. Para atualizar depois, faça backup primeiro, substitua os arquivos no MESMO repositório/endereço e publique novamente.
+
+TESTE INICIAL SUGERIDO
+1. Cadastre um suíno de teste com lote “Teste”, peso inicial 25 kg e compra de R$ 200.
+2. Registre uma segunda pesagem em outra data para ver o GMD.
+3. Cadastre um insumo: saco de 40 kg por R$ 100. O preço por kg deverá ser R$ 2,50.
+4. Registre estoque suficiente, prepare um traço e forneça parte da ração ao lote.
+5. Confira o saldo do Armazém e o relatório.
+6. Apague o animal de teste depois de conferir.
+
+LIMITAÇÕES DA PRIMEIRA VERSÃO
+- Não inclui reprodução, maternidade ou sincronização em nuvem.
+- Resultado financeiro é estimado com base nos registros lançados; custos gerais devem ser vinculados ao lote ou ao animal para melhorar a precisão.
+- A preparação da ração exige que a soma dos ingredientes seja igual ao peso do traço.
+- A ração consumida é baixada do armazém ao registrar o fornecimento ao lote.
+- As pesagens precisam ter datas diferentes para o GMD. O GMD usa apenas as duas pesagens mais recentes.
